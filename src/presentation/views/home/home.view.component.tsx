@@ -21,9 +21,8 @@ export const HomeViewComponent = () => {
     }
 
     return (
-        <section className="no-scrollbar overflow-y-scroll w-[99.9%] ">
-            <h1>HomeViewComponentWorks!</h1>
-            <CardComponent  data={data} />
+        <section className="w-[98%] ">
+            <CardComponent data={data} />
         </section>
     )
 }
