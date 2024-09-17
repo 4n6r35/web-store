@@ -7,7 +7,7 @@ export const CardComponent = ({ data, discountPercentage }: { data: IProduct[], 
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:gap-x-8">
             {data.map((prod, index) => (
 
-                <CardNewComponent {...prod} key={index} discountPercentage={discountPercentage}/>
+                <CardNewComponent data={prod} key={index} discountPercentage={discountPercentage}/>
 
 
                 // <div key={index} className="group relative">
@@ -25,7 +25,7 @@ export const CardComponent = ({ data, discountPercentage }: { data: IProduct[], 
                 //                         <del className='text-gray-400 mr-2'>{prod.price}</del>
                 //                         ${(prod.price * (1 - discountPercentage / 100)).toFixed(2)}
                 //                     </>
-                //                 ) : (
+                //                 ) : (a
                 //                     prod.price
                 //                 )}
                 //             </p>
