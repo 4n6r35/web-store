@@ -5,9 +5,11 @@ import { IProduct } from "../../../domain/interface/products.inteface"
 export const HomeViewComponent = () => {
 
     const [data, setData] = useState<IProduct[]>([])
+    const [dscPercentage, setDscPercentage] = useState(0)
 
     useEffect(() => {
         getData();
+        getDiscountPercentage();
     })
 
     const getData = async () => {
@@ -20,9 +22,14 @@ export const HomeViewComponent = () => {
         }
     }
 
+    const getDiscountPercentage = () => {
+        const getPercentage = localStorage.getItem("DiscountValue")
+        setDscPercentage(Number(getPercentage))
+    }
+
     return (
-        <section className="w-[98%] ">
-            <CardComponent data={data} />
+        <section className="">
+            <CardComponent data={data} discountPercentage={dscPercentage} />
         </section>
     )
 }

@@ -9,14 +9,14 @@ export const HomePageComponent = () => {
     }
     return (
         <>
-            <section className="w-[98%] pl-5 pt-5 grid grid-cols-2 text-white">
+            <section className="flex justify-between items-center p-5">
                 <h1 className="text-4xl">Web Store</h1>
                 <p
                     className="cursor-default self-start justify-self-end"
                     onClick={handleNavigate}
                 >Obtener descuentos →</p>
             </section>
-            <section className="p-5">
+            <section className="px-10">
                 <HomeViewComponent />
             </section>
         </>

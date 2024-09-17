@@ -26,3 +26,9 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+body,
+html {
+  margin: none;
+  padding: none;
+}
