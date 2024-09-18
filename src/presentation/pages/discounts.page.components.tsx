@@ -1,21 +1,24 @@
-import { useNavigate } from "react-router-dom";
+
+import { ArrowLeftIcon } from "../assets"
 import { DiscountViewComponent } from "../views/discounts/discount.view.components"
 
 
 export const DiscountPageComponent = () => {
-    const navigate = useNavigate();
+
     const handleNavigate = () => {
-        navigate('/')
+        window.history.back()
     }
 
     return (
         <>
-            <p
-                className="pt-3 pl-4 cursor-default self-start justify-self-end"
-                onClick={handleNavigate}
-            >Regresar</p>
-            <section className="p-4 text-white">
-                <h1 className="text-4xl">Descuentos</h1>
+            <div className="text-gray-900 flex justify-start gap-2 p-2 w-dvw items-center" >
+                <p
+                    className="w-10 flex justify-center items-center aspect-square rounded-md hover:bg-stone-200 text-2xl "
+                    onClick={handleNavigate}
+                ><ArrowLeftIcon /></p>
+                <h1 className="text-xl font-bold">Descuentos</h1>
+            </div>
+            <section className="w-dvw px-4">
                 <DiscountViewComponent />
             </section>
         </>

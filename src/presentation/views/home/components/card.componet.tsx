@@ -4,7 +4,7 @@ import { CardNewComponent } from './card.new.component';
 export const CardComponent = ({ data, discountPercentage }: { data: IProduct[], discountPercentage: number }) => {
     return (
         // <div className="mt-6 grid grid-cols-4 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:gap-x-8">
+        <div className="grid gap-10 grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:gap-x-8 justify-center justify-items-center">
             {data.map((prod, index) => (
 
                 <CardNewComponent data={prod} key={index} discountPercentage={discountPercentage}/>

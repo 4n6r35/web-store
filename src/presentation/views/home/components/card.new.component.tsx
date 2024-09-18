@@ -5,7 +5,7 @@ export const CardNewComponent = (props: { data: IProduct, discountPercentage: nu
     const discountedPrice = (props.data.price * (1 - props.discountPercentage / 100)).toFixed(2);
 
     return (
-        <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-stone-300 bg-stone-300 shadow-md">
+        <div className="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border  bg-white shadow-md select-none">
             <a className="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
                 <img className="object-contain w-full" src={props.data.image!} alt="product image" />
                 {props.discountPercentage > 0 && (

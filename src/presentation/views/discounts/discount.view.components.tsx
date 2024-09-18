@@ -4,7 +4,7 @@ export const DiscountViewComponent = () => {
 
     return (
         <>
-            <h1 className="pt-2 text-xl">Selecciona tu descuento, ¡No dejes escapar esta ganga!</h1>
+            <h2 className="text-gray-900 font-extrabold text-[16px] select-none">Selecciona tu descuento, ¡No dejes escapar esta ganga!</h2>
             <CardComponent/>
         </>
     )

@@ -1,6 +1,6 @@
 import { ICard } from "../../../../domain/interface/card.interface";
 import { useState, useEffect } from "react";
-import '../styles/animation.css'; 
+import '../styles/animation.css';
 import { SurpriceIcon } from "../../../assets";
 
 export const CardComponent = () => {
@@ -12,7 +12,7 @@ export const CardComponent = () => {
     ]);
 
     const [timer, setTimer] = useState(5); // Temporizador de 5 segundos
-    const [selectedValue, setSelectedValue] = useState<string | null>(null);
+    // const [selectedValue, setSelectedValue] = useState<string | null>(null);
     const [cardsShuffled, setCardsShuffled] = useState(false);
     const [cardFlipped, setCardFlipped] = useState<boolean>(false); // Estado para controlar si una carta ya se ha volteado
 
@@ -50,7 +50,7 @@ export const CardComponent = () => {
             const selectedCard = updatedCards.find((card) => card.id === id);
             if (selectedCard) {
                 const valueWithoutPercentage = selectedCard.value.replace("%", "");
-                setSelectedValue(valueWithoutPercentage);
+                // setSelectedValue(valueWithoutPercentage);
 
                 localStorage.setItem("DiscountValue", valueWithoutPercentage);
             }
@@ -61,27 +61,25 @@ export const CardComponent = () => {
 
     return (
         <>
-            <figure className="p-10 px-64">
-                <div className=" grid grid-cols-2 gap-4">
-                    {cards.map((card) => (
-                        <div
-                            key={card.id}
-                            className={`h-48 w-48 card ${card.flipped ? "flipped" : ""}`}
-                            onClick={() => flipCard(card.id)}
-                        >
-                            <div className="card__content">
-                                <div className="card__front text-8xl">
-                                    <SurpriceIcon />
+            <div className="grid grid-cols-2 gap-4 items-center justify-items-center justify-center lg:px-96 lg:py-14">
+                {cards.map((card) => (
+                    <div
+                        key={card.id}
+                        className={`h-48 w-48 card ${card.flipped ? "flipped" : ""}`}
+                        onClick={() => flipCard(card.id)}
+                    >
+                        <div className="card__content">
+                            <div className="card__front text-8xl shadow__card">
+                                <SurpriceIcon />
 
-                                </div>
-                                <div className="card__back">
-                                    <h2 className="font-bold text-5xl">{card.value}</h2>
-                                </div>
+                            </div>
+                            <div className="card__back shadow__card">
+                                <h2 className="font-bold text-5xl ">{card.value}</h2>
                             </div>
                         </div>
-                    ))}
-                </div>
-            </figure>
+                    </div>
+                ))}
+            </div>
 
             {/* {timer > 0 && <p>Las cartas se mezclarán en {timer} segundos...</p>}
             {selectedValue && <p>Selected Discount: {selectedValue}%</p>} */}
