@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { CardComponent } from "./components/card.componet"
 import { IProduct } from "../../../domain/interface/products.inteface"
+import { CardNewComponent } from "./components"
 
 export const HomeViewComponent = () => {
 
@@ -28,8 +28,11 @@ export const HomeViewComponent = () => {
     }
 
     return (
-        <section className="">
-            <CardComponent data={data} discountPercentage={dscPercentage} />
+        <section className="grid gap-10 grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:gap-x-8 justify-center justify-items-center">
+            {data.map((prod, index) => (
+                <CardNewComponent data={prod} key={index} discountPercentage={dscPercentage} />
+
+            ))}
         </section>
     )
 }
